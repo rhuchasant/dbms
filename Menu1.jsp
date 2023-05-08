@@ -17,7 +17,7 @@ Class.forName("com.mysql.jdbc.Driver");
 // Connect to the database
 String url = "jdbc:mysql://localhost:3306/mini";
 String user = "root";
-String password = "aditi10387!@#";
+String password = "Rhucha2301$";
 Connection conn = DriverManager.getConnection(url, user, password);
 
 // Execute the select query
