@@ -28,7 +28,7 @@ public class order1 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	
-		
+		int oid=Integer.parseInt(request.getParameter("Oid"));
 		int pid=Integer.parseInt(request.getParameter("Pid"));
 		int qty=Integer.parseInt(request.getParameter("QTY"));
 		RequestDispatcher dispatcher=null;
@@ -39,9 +39,10 @@ public class order1 extends HttpServlet {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			 con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mini","root","Rhucha2301$");
-			PreparedStatement pst=con.prepareStatement("Insert into order_product (PID,Qty) values (?,?)");
-			pst.setInt(1, pid);
-			pst.setInt(2, qty);
+			PreparedStatement pst=con.prepareStatement("Insert into order_product (OID,PID,Qty) values (?,?,?)");
+			pst.setInt(1, oid);
+			pst.setInt(2, pid);
+			pst.setInt(3, qty);
 			
 			int rowCount=pst.executeUpdate();
 			dispatcher=request.getRequestDispatcher("Menu1.jsp");
