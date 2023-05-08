@@ -248,6 +248,7 @@
 				<div class="modal-header border-0">
 					<button class="btn-close" type="button" data-bs-dismiss="modal"
 						aria-label="Close"></button>
+						
 				</div>
 				<div class="modal-body text-center pb-5">
 					<div class="container">
@@ -256,6 +257,16 @@
 								<!-- Portfolio Modal - Title-->
 								<h2
 									class="portfolio-modal-title text-secondary text-uppercase mb-0">PFT</h2>
+									<form method="get" action="Menu1.jsp" class="register-form"
+							id="login-form">
+							
+							
+							
+							<div class="form-group form-button">
+								<input type="submit" name="signin" id="signin"
+									class="form-submit" value="ORDER" />
+							</div>
+						</form>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -265,10 +276,10 @@
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image-->
-								<img class="img-fluid rounded mb-5"
-									src="assets/img/portfolio/pft.jpg" alt="..." />
+								
 								<!-- Portfolio Modal - Text-->
-								<p class="mb-4">:).</p>
+								
+								
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
 									<i class="fas fa-times fa-fw"></i> Close Window
