@@ -1,4 +1,14 @@
-<%@ page import="java.sql.*" %>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Menu</title>
+		<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%
 // Load the MySQL driver
@@ -7,7 +17,7 @@ Class.forName("com.mysql.jdbc.Driver");
 // Connect to the database
 String url = "jdbc:mysql://localhost:3306/mini";
 String user = "root";
-String password = "Rhucha2301$";
+String password = "aditi10387!@#";
 Connection conn = DriverManager.getConnection(url, user, password);
 
 // Execute the select query
@@ -34,3 +44,5 @@ rs.close();
 stmt.close();
 conn.close();
 %>
+	</body>
+</html>
