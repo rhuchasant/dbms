@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+
+
+body{
+	background-color: #F5C6EC;
+	display:flex;
+	min-height: 80vh;
+	align-items: center;
+    justify-content: center;
+    font-size:30px;
+    font-weight:bold;
+    background-image: url('https://wallpapers.com/images/hd/vintage-clouds-and-meadow-field-pinterest-aesthetic-1h1zk8tl7gtnez9l.jpg');
+    background-repeat: no-repeat;
+  	background-size: cover;
+  	backdrop-filter: blur(3px);
+}
+
+.signin-form {
+  max-width: 500px; /* Set maximum width */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-title {
+  margin-bottom: 20px; /* Add some margin bottom */
+  text-align: center; /* Center the title text */
+  font-size: 30px; /* Set font size */
+  color: #000000; /* Set font color */
+}
+
+
+.form-group input {
+  width: 100%; /* Set width to 100% */
+  padding: 10px; /* Add some padding */
+  border: 1px solid #000000; /* Add some border */
+  border-radius: 8px; /* Add some border radius */
+  font-size: 20px; /* Set font size */
+  color: #000000; /* Set font color */
+  background-color:#FFF3E2;
+}
+
+
+.form-group label {
+  display: block; /* Display the label as a block element */
+  margin-bottom: 5px; /* Add some margin bottom */
+  font-size: 16px; /* Set font size */
+  color: #333; /* Set font color */
+}
