@@ -1,3 +1,12 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%
@@ -34,3 +43,5 @@ rs.close();
 stmt.close();
 conn.close();
 %>
+</body>
+</html>
