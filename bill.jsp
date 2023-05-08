@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>BILL</title>
-		<link href="bill.css" rel="stylesheet" type="text/css"/>
+		<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body>
 		<%@ page import="java.sql.*" %>
@@ -12,11 +12,10 @@
 
 
 
-	
-	
+
 
 <div class="signin-form">
-						<h3 class="form-title">Enter OID to print the bill!</h3>
+						<h3 class="form-title">Enter OID for which you want to print bill!</h3>
 						<form method="post" action="bill1" class="register-form"
 							id="login-form">
 							<div class="form-group">
@@ -28,9 +27,9 @@
 							
 						</form>
 						
+					</div>
 
-</div>
 
 
-</body>
-</html>
+
+
