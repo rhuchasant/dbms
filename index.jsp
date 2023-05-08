@@ -307,6 +307,16 @@
 								<!-- Portfolio Modal - Title-->
 								<h2
 									class="portfolio-modal-title text-secondary text-uppercase mb-0">JW MARRIOTT</h2>
+									<form method="get" action="Menu2.jsp" class="register-form"
+							id="login-form">
+							
+							
+							
+							<div class="form-group form-button">
+								<input type="submit" name="signin" id="signin"
+									class="form-submit" value="ORDER" />
+							</div>
+						</form>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -347,6 +357,16 @@
 								<!-- Portfolio Modal - Title-->
 								<h2
 									class="portfolio-modal-title text-secondary text-uppercase mb-0">LCR</h2>
+									<form method="get" action="Menu3.jsp" class="register-form"
+							id="login-form">
+							
+							
+							
+							<div class="form-group form-button">
+								<input type="submit" name="signin" id="signin"
+									class="form-submit" value="ORDER" />
+							</div>
+						</form>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -387,6 +407,16 @@
 								<!-- Portfolio Modal - Title-->
 								<h2
 									class="portfolio-modal-title text-secondary text-uppercase mb-0">VERANDAH</h2>
+									<form method="get" action="Menu4.jsp" class="register-form"
+							id="login-form">
+							
+							
+							
+							<div class="form-group form-button">
+								<input type="submit" name="signin" id="signin"
+									class="form-submit" value="ORDER" />
+							</div>
+						</form>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -427,6 +457,16 @@
 								<!-- Portfolio Modal - Title-->
 								<h2
 									class="portfolio-modal-title text-secondary text-uppercase mb-0">SHIV SAGAR</h2>
+									<form method="get" action="Menu5.jsp" class="register-form"
+							id="login-form">
+							
+							
+							
+							<div class="form-group form-button">
+								<input type="submit" name="signin" id="signin"
+									class="form-submit" value="ORDER" />
+							</div>
+						</form>
 								<!-- Icon Divider-->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
