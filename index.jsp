@@ -276,7 +276,10 @@
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image-->
-								
+								<img class="img-fluid rounded mb-5"
+									src="assets/img/portfolio/pft.jpg" alt="..." />
+								<!-- Portfolio Modal - Text-->
+								<p class="mb-4">:)</p>
 								<!-- Portfolio Modal - Text-->
 								
 								
