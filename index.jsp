@@ -46,8 +46,7 @@
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">HOTELS</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+					
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="Logout">Logout</a></li>
 					<li class="nav-item mx-0 mx-lg-1 bg-danger"><a
@@ -169,8 +168,37 @@
 				</div>
 				<!-- Portfolio Item 6-->
 				
+				
 			</div>
 		</div>
+		<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <form action="bill.jsp">
+    <button class="circular-button" type="submit">PRINT BILL</button>
+  </form>
+</div>
+
+	<style>
+  .circular-button {
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .circular-button:hover {
+    background-color: black;
+  }
+</style>
+		
 	</section>
 	<!-- About Section-->
 	<section class="page-section bg-primary text-white mb-0" id="about">
