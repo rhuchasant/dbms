@@ -45,6 +45,7 @@ public class bill1 extends HttpServlet {
 		        out.println("</head>");
 		        out.println("<body>");
 		        out.println("<table>");
+		        out.println("<tr><td>" + "Order ID" + "</td><td>"+"Product Name" + "</td><td>" +"Quantity" +   "</td><td>" + "Price" +  "</td><td>" + "Total Price"+ "</td></tr>");
 		        while (rs.next()) {
 		            out.println("<tr>");
 		            out.println("<td>" + rs.getInt("order_product.OID") + "</td>");
