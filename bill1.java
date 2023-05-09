@@ -1,75 +1,74 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Menu</title>
-		<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
-	</head>
-	<body>
-		<%@ page import="java.sql.*" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="javax.sql.*" %>
-<%
-// Load the MySQL driver
-Class.forName("com.mysql.jdbc.Driver");
 
-// Connect to the database
-String url = "jdbc:mysql://localhost:3306/mini";
-String user = "root";
-String password = "Rhucha2301$";
-Connection conn = DriverManager.getConnection(url, user, password);
 
-// Execute the select query
-Statement stmt = conn.createStatement();
-String query = "Select * from product,hotel_product where product.PID=hotel_product.PID and HID=102";
-ResultSet rs = stmt.executeQuery(query);
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-// Display the results in a table
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-out.println("<table>");
-out.println("<caption>MENU OF JW MARRIOTT</caption>");
-out.println("<tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Category</th></tr>");
-while (rs.next()) {
-    int pid = rs.getInt("product.PID");
-    String pname = rs.getString("product.PName");
-    int price = rs.getInt("product.Price");
-    String cat = rs.getString("product.Category");
-    out.println("<tr><td>" + pid + "</td><td>" + pname + "</td><td>" + price + "</td><td>" + cat+ "</td></tr>");
-}
-out.println("</table>");
+/**
+ * Servlet implementation class bill1
+ */
+@WebServlet("/bill1")
+public class bill1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int oid=Integer.parseInt(request.getParameter("Oid"));
+		
+		HttpSession session=request.getSession();
+		RequestDispatcher dispatcher=null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/mini","root","Rhucha2301$");
+			 PreparedStatement pst=con.prepareStatement("SELECT order_product.OID, product.PName, order_product.Qty, product.Price, (order_product.Qty * product.Price) AS total_price FROM order_product JOIN product ON order_product.PID = product.PID WHERE order_product.OID =?");
+			 pst.setInt(1, oid);
+			 
+			 
+			 ResultSet rs=pst.executeQuery();
+			 
+			 PrintWriter out = response.getWriter();
+		        out.println("<html>");
+		        out.println("<head>");
+		        out.println("<link href=\"menuStyle.css\" rel=\"stylesheet\" type=\"text/css\"/>");
+		        out.println("</head>");
+		        out.println("<body>");
+		        out.println("<table>");
+		        out.println("<tr><td>" + "Order ID" + "</td><td>"+"Product Name" + "</td><td>" +"Quantity" +   "</td><td>" + "Price" +  "</td><td>" + "Total Price"+ "</td></tr>");
+		        while (rs.next()) {
+		            out.println("<tr>");
+		            out.println("<td>" + rs.getInt("order_product.OID") + "</td>");
+		            out.println("<td>" + rs.getString("product.PName") + "</td>");
+		            out.println("<td>" + rs.getInt("order_product.Qty") + "</td>");
+		            out.println("<td>" + rs.getString("product.Price") + "</td>");
+		            out.println("<td>" + rs.getInt("total_price") + "</td>");
+		            out.println("</tr>");
+		        }
+		        out.println("</table>");
+		        out.println("</body>");
+		        out.println("</html>");
+		        
+		        // Clean up resources
+		        rs.close();
+		        pst.close();
+		        con.close();
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	}
 
-// Close the database connection
-rs.close();
-stmt.close();
-conn.close();
-%>
+	}
 
-<div class="signin-form">
-						<h3 class="form-title">Place your order here!</h3>
-						<form method="post" action="order2" class="register-form"
-							id="login-form">
-							<div class="form-group">
-								<label for="Oid"><i
-									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="number" name="Oid" id="Oid"
-									placeholder="Order ID" />
-							</div>
-							<div class="form-group">
-								<label for="Pid"><i
-									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="number" name="Pid" id="Pid"
-									placeholder="Product ID" />
-							</div>
-							<div class="form-group">
-								<label for="QTY"><i class="zmdi zmdi-lock"></i></label> <input
-									type="number" name="QTY" id="QTY"
-									placeholder="Quantity" />
-							</div>
-							
-							<div class="form-group form-button">
-								<input type="submit" name="submit" id="submit"
-									class="form-submit" value="Place order!" />
-							</div>
-						</form>
-						
-					</div>
+
