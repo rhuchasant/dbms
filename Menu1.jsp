@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Menu</title>
+		<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<%@ page import="java.sql.*" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%
@@ -12,14 +21,13 @@ Connection conn = DriverManager.getConnection(url, user, password);
 
 // Execute the select query
 Statement stmt = conn.createStatement();
-String query = "Select * from product,hotel_product where product.PID=hotel_product.PID and HID=101";
+String query = "Select * from product,hotel_product where product.PID=hotel_product.PID and HID=102";
 ResultSet rs = stmt.executeQuery(query);
 
 // Display the results in a table
 
 out.println("<table>");
-
-out.println("<caption>MENU OF PFT</caption>");
+out.println("<caption>MENU OF JW MARRIOTT</caption>");
 out.println("<tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Category</th></tr>");
 while (rs.next()) {
     int pid = rs.getInt("product.PID");
@@ -36,11 +44,16 @@ stmt.close();
 conn.close();
 %>
 
-	
 <div class="signin-form">
-						<h2 class="form-title">Place your order here!</h2>
-						<form method="post" action="order1" class="register-form"
+						<h3 class="form-title">Place your order here!</h3>
+						<form method="post" action="order2" class="register-form"
 							id="login-form">
+							<div class="form-group">
+								<label for="Oid"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> <input
+									type="number" name="Oid" id="Oid"
+									placeholder="Order ID" />
+							</div>
 							<div class="form-group">
 								<label for="Pid"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
