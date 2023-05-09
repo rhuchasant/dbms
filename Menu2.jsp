@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Menu</title>
-<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Menu</title>
+		<link href="menuStyle.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<%@ page import="java.sql.*" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%
@@ -43,5 +43,33 @@ rs.close();
 stmt.close();
 conn.close();
 %>
-</body>
-</html>
+
+<div class="signin-form">
+						<h3 class="form-title">Place your order here!</h3>
+						<form method="post" action="order2" class="register-form"
+							id="login-form">
+							<div class="form-group">
+								<label for="Oid"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> <input
+									type="number" name="Oid" id="Oid"
+									placeholder="Order ID" />
+							</div>
+							<div class="form-group">
+								<label for="Pid"><i
+									class="zmdi zmdi-account material-icons-name"></i></label> <input
+									type="number" name="Pid" id="Pid"
+									placeholder="Product ID" />
+							</div>
+							<div class="form-group">
+								<label for="QTY"><i class="zmdi zmdi-lock"></i></label> <input
+									type="number" name="QTY" id="QTY"
+									placeholder="Quantity" />
+							</div>
+							
+							<div class="form-group form-button">
+								<input type="submit" name="submit" id="submit"
+									class="form-submit" value="Place order!" />
+							</div>
+						</form>
+						
+					</div>
